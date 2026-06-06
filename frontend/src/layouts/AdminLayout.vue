@@ -15,7 +15,7 @@
         <template v-for="route in menuRoutes" :key="route.path">
           <el-menu-item :index="'/' + route.path">
             <el-icon>
-              <component :is="route.meta.icon" />
+              <component :is="iconMap[route.meta.icon]" />
             </el-icon>
             <span>{{ route.meta.title }}</span>
           </el-menu-item>
@@ -46,14 +46,37 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, markRaw } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { Food, DataLine, Edit, Plus, View, ChatDotRound, Vegetable, Location } from '@element-plus/icons-vue'
+import {
+  Food, DataLine, Edit, Plus, View, ChatDotRound, Apple, Location,
+  Star, CircleCheck, Trophy, Grape, Clock, User, List, Printer
+} from '@element-plus/icons-vue'
 
 const route = useRoute()
+const router = useRouter()
+
+const iconMap = {
+  DataLine: markRaw(DataLine),
+  Food: markRaw(Food),
+  Apple: markRaw(Apple),
+  ChatDotRound: markRaw(ChatDotRound),
+  Edit: markRaw(Edit),
+  Plus: markRaw(Plus),
+  View: markRaw(View),
+  Star: markRaw(Star),
+  CircleCheck: markRaw(CircleCheck),
+  Trophy: markRaw(Trophy),
+  Grape: markRaw(Grape),
+  Clock: markRaw(Clock),
+  User: markRaw(User),
+  List: markRaw(List),
+  Printer: markRaw(Printer),
+  Location: markRaw(Location),
+}
 
 const menuRoutes = computed(() => {
-  const routes = useRouter().options.routes[0].children
+  const routes = router.options.routes[0].children
   return routes.filter(r => !r.meta?.hidden)
 })
 

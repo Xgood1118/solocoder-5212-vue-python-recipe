@@ -119,7 +119,7 @@
               新建菜谱
             </el-button>
             <el-button size="large" @click="$router.push('/ingredients')">
-              <el-icon style="margin-right: 6px"><Vegetable /></el-icon>
+              <el-icon style="margin-right: 6px"><Apple /></el-icon>
               食材库管理
             </el-button>
             <el-button size="large" @click="$router.push('/feedback')">
@@ -153,7 +153,7 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import {
-  Food, CircleCheck, ChatDotRound, Star, Plus, Vegetable, Download, Upload
+  Food, CircleCheck, ChatDotRound, Star, Plus, Apple, Download, Upload
 } from '@element-plus/icons-vue'
 import { getOverviewStats, getIngredientRank } from '@/api/common'
 import { exportRecipes, importRecipes } from '@/api/recipe'

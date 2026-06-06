@@ -43,7 +43,7 @@ const routes = [
         path: 'ingredients',
         name: 'Ingredients',
         component: () => import('@/views/ingredients/IngredientList.vue'),
-        meta: { title: '食材库', icon: 'Vegetable' },
+        meta: { title: '食材库', icon: 'Apple' },
       },
       {
         path: 'feedback',

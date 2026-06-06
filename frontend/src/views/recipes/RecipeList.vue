@@ -224,7 +224,7 @@ import {
 import {
   getRecipeList, deleteRecipe, publishRecipe, archiveRecipe, exportRecipes
 } from '@/api/recipe'
-import { searchIngredients, getConstants } from '@/api/ingredient'
+import { searchIngredients } from '@/api/ingredient'
 import { getConstants as getSysConstants } from '@/api/common'
 
 const router = useRouter()
